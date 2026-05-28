@@ -6,3 +6,15 @@
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
     <title>Suppression Cave</title>
 </head>
+<body>
+<header>
+
+</header>
+<article>
+
+</article>
+<footer>
+    
+</footer>
+</body>
+</html>

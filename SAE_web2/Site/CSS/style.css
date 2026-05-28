@@ -1,0 +1,16 @@
+.connexion_rect{
+    justify-content: center;
+    border-radius: 2em;
+    background-color: rgb(214, 118, 88);
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-top: 10%;
+    padding: 3%;
+    font-family: Arial;
+}
+
+.connexion_fields{
+    justify-content: right;
+    margin: 5%;
+    border-width: 2px;
+}
