@@ -7,10 +7,27 @@
     margin-top: 10%;
     padding: 3%;
     font-family: Arial;
+    color: antiquewhite;
 }
 
 .connexion_fields{
     justify-content: right;
     margin: 5%;
+    padding: 5%;
+    border-style: solid;
+    border-color: antiquewhite;
     border-width: 2px;
+    border-radius: 0.5em;
+}
+
+.champ{
+    margin: 4%;
+}
+
+.title_co{
+    font-size: 2em;
+}
+
+.id_mail, .id_pass{
+    font-size: 1.2em;
 }

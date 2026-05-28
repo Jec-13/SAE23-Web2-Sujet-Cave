@@ -1,8 +1,7 @@
 <?php
-
-function get_bdd_comptes(){
+function get_bdd_comptes($path){
 	$retour = false;
-		$madb = new PDO('sqlite:../BDD/comptes.sqlite');
+		$madb = new PDO('sqlite:'.$path);
 		$requete = "SELECT u.EMAIL, u.PASS, u.STATUT
 		            FROM utilisateurs u";
 		$resultat = $madb->query($requete);
@@ -13,9 +12,9 @@ function get_bdd_comptes(){
 		return $retour;
 };
 
-function get_liste_vins(){
+function get_liste_vins($path){
 	$retour = false;
-		$madb = new PDO('sqlite:../BDD/cave.sqlite');
+		$madb = new PDO('sqlite:'.$path);
 		$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM, negociants.REGION
 		            FROM cave
 					JOIN negociants ON negociants.noN=cave.noN
@@ -28,8 +27,8 @@ function get_liste_vins(){
 		return $retour;
 };
 
-function is_admin($mail){
-	$liste_util=get_bdd_comptes();
+function is_admin($mail, $path){
+	$liste_util=get_bdd_comptes($path);
 	$retour=false;
 	foreach ($liste_util as $key => $val){
 		if ($mail == $val["EMAIL"] && $val["STATUT"] == "admin"){
@@ -39,8 +38,8 @@ function is_admin($mail){
 	return $retour;
 }
 
-function test_connexion($mail, $pass){
-	$liste_util=get_bdd_comptes();
+function test_connexion($mail, $pass, $path){
+	$liste_util=get_bdd_comptes($path);
 	$retour=false;
 	foreach ($liste_util as $key => $val){
 		if ($mail == $val["EMAIL"] && $val["PASS"] == $pass){
