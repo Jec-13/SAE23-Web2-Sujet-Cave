@@ -2,30 +2,31 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <link href="css/style.css" rel="stylesheet" type="text/style.css" />
+    <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
     <title>Index Cave</title>
 </head>
 <?php
+include 'INCLUDE/header.php';
+include 'INCLUDE/functions.php';
 session_start();
 
 if (empty($_SESSION['EMAIL'])){
     header('Location: Connexion.php');
     exit();
 }
-if ($_SESSION['ADMIN']){
-    echo '<p>vou êtes admin</p>';
-}
-else{
-    echo "<p>vou n'êtes pas admin</p>";
-}
 ?>
 <body>
 <header>
-
+<?php
+header_page("Principale");
+menu_page();
+?>
 </header>
 <article>
-<p><a href='INCLUDE/deco.php'>se déconecter</a></p>
+<?php
+afficheTableau(get_liste_vins('BDD/cave.sqlite'));
+?>
 </article>
 <footer>
     

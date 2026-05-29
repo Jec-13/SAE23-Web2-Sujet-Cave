@@ -2,42 +2,46 @@
 
 ---
 
-## Point d'avancement séance n°01
+## Point d'avancement séance n°03
 
-**Date :** 20/05/2026  
-**Lieu de travail :** Salle 07
+**Date :** 29/05/2026  
+**Lieu de travail :** Domicile
 **Méthode de travail :** Seul  
 
 ---
 
 ### Tâches prévues pendant la séance :
-- [ ] Tâche 1 se répartir les taches
-- [ ] Tâche 2 Faire l'arboraissance des fichiers
-- [ ] Tâche 3 Mise en comment des outils de code
-- [ ] Tâche 4 Mêtre en place une base de donné via sqlite
-- [ ] Tâche 5 Choisir les images pour les vins
+- [ ] Tâche 1 faire `index.php`
+- [ ] Tâche 2 faire `footer.php`
+- [ ] Tâche 3 faire `header.php`
+- [ ] Tâche 4 héberger le site web en publique
+- [ ] Tâche 5 finir `connexion.php`
+ + fetch et la vérification d'email
 
 ---
 
 ### Tâches traitées pendant la séance :
-- [x] Tâche 1 se répartir les taches
-  + Lucien : ETU1
-  + Mohamed : ETU2
-- [x] Tâche 2 Faire l'arboraissance des fichiers
-- [x] Tâche 4 Mêtre en place une base de donné via sqlite
-- [x] Tâche 5 Choisir les images pour les vins
-- [ ] Tâche 3 Mise en comment des outils de code
-  + Utilisation de Github
+- [x] Tâche 1 faire `header.php`
+- [x] Tâche 2 finir `connexion.php`
+- [x] Tâche 5 héberger le site web en publique
+ + lien : **https://lucien-gaborel.byh.fr/**
+- [ ] Tâche 4 faire `index.php`
+ + manque le footer et la partie de ETU2 (Mohamed)
+ + le header, menu, tableau avec image est fait
+- [ ] Tâche 5 faire `footer.php`
+
 
 ---
 
 ### Problèmes rencontrés :
-- Problème 1 : Pas de réponse de Mohamed pour la confirmation de l'utilisation de Github
+- Problème 1 :  Pas asser de temps pour commencer le footer.
+- Problème 2 : Difficulter avec fetch qui m'ont fait perdre du temps.
+> Ce problème a été résolue
 
 ---
 
 ### Tâches prévues avant la prochaine séance :
-- [ ] Tâche A Commencer `Connexion.php`
-- [ ] Tâche B Faire un fichier `Header.php` avec une fonction header pour tout les fichiers
+- [ ] Tâche A finir `index.php` et `footer.php`
+- [ ] Tâche B Commencer `modification.php`
 
 ---

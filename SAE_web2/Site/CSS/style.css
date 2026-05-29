@@ -31,3 +31,116 @@
 .id_mail, .id_pass{
     font-size: 1.2em;
 }
+
+.noemail, .formatemail, .nopass, .erch{
+    display: none;
+    color: red;
+    border-color: red;
+    border-radius: 0.2em;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.header_page{
+    background-color: rgb(214, 118, 88);
+    font-family: Arial;
+    color: antiquewhite;
+    padding: 3%;
+    justify-content: center;
+}
+
+.btn-deconnexion {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.btn-deconnexion:hover {
+    background-color: #e74c3c;
+}
+
+.menu_page{
+    background-color: rgb(60, 60, 60);
+    color: antiquewhite;
+    padding: 1%;
+    font-family: Arial;
+}
+
+.liste_Page{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-menu {
+    background-color: antiquewhite;
+    color: rgb(214, 118, 88);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.btn-menu:hover {
+    background-color: rgb(195, 183, 167);
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+th {
+    background-color: #722f37;  /* bordeaux */
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f0f0;
+}
+
+tr:hover {
+    background-color: #e8d5d5;
+    transition: background-color 0.2s;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+
+td:has(img) {
+    text-align: center;
+}
