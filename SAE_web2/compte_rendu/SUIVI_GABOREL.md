@@ -16,7 +16,7 @@
 - [ ] Tâche 3 faire `header.php`
 - [ ] Tâche 4 héberger le site web en publique
 - [ ] Tâche 5 finir `connexion.php`
- + fetch et la vérification d'email
+  + fetch et la vérification d'email
 
 ---
 
@@ -24,10 +24,10 @@
 - [x] Tâche 1 faire `header.php`
 - [x] Tâche 2 finir `connexion.php`
 - [x] Tâche 5 héberger le site web en publique
- + lien : **https://lucien-gaborel.byh.fr/**
+  + lien : **https://lucien-gaborel.byh.fr/**
 - [ ] Tâche 4 faire `index.php`
- + manque le footer et la partie de ETU2 (Mohamed)
- + le header, menu, tableau avec image est fait
+  + manque le footer et la partie de ETU2 (Mohamed)
+  + le header, menu, tableau avec image est fait
 - [ ] Tâche 5 faire `footer.php`
 
 
