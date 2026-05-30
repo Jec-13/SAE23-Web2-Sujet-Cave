@@ -89,11 +89,9 @@ body {
     background-color: antiquewhite;
     color: rgb(214, 118, 88);
     border: none;
-    padding: 8px 16px;
+    padding: 8px;
     border-radius: 6px;
     font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s;
     text-decoration: none;
 }
 
@@ -104,23 +102,22 @@ body {
 table {
     border-collapse: collapse;
     width: 80%;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+    margin: 12px auto;
+    font-family: Arial;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 th {
-    background-color: #722f37;  /* bordeaux */
-    color: white;
-    padding: 12px 15px;
-    text-align: left;
-    text-transform: uppercase;
+    background-color: rgb(214, 118, 88);
+    color: antiquewhite;
+    padding: 12px;
+    text-align: center;
     font-size: 14px;
 }
 
 td {
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border-bottom: 1px solid antiquewhite;
 }
 
 tr:nth-child(even) {
@@ -128,8 +125,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    background-color: #e8d5d5;
-    transition: background-color 0.2s;
+    background-color: rgb(195, 183, 167);
 }
 
 td img {
@@ -141,6 +137,28 @@ td img {
     margin: auto;
 }
 
-td:has(img) {
+footer {
+    background-color: rgb(214, 118, 88);
+    font-family: arial;
+    padding: 2%;
+}
+
+.main-footer {
+    border-radius: 2em;
+    padding: 2em;
+    border-color: antiquewhite;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.merci {
+    color: antiquewhite;
     text-align: center;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.second-footer{
+    text-align: center;
+    color: antiquewhite;
 }

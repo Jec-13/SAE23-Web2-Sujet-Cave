@@ -1,6 +1,7 @@
 <?php
 function header_page($nom){
     ?>
+    <header>
     <div class='header_page'>
     <?php
     $role = $_SESSION['ADMIN'] ? 'ADMIN' : 'USER';
@@ -27,6 +28,7 @@ function menu_page(){
     ?>
     </ul>
     </div>
+    </header>
     <?php
 }
 ?>

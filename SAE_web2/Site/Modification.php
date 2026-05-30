@@ -16,17 +16,15 @@ if (empty($_SESSION['EMAIL'])){
 }
 ?>
 <body>
-<header>
 <?php
-header_page("Modification");
+header_page("Principale");
 menu_page();
 ?>
-</header>
 <article>
 
 </article>
-<footer>
-    
-</footer>
+<?php
+footer()
+?>
 </body>
 </html>

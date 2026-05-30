@@ -9,6 +9,7 @@
 <?php
 include 'INCLUDE/header.php';
 include 'INCLUDE/functions.php';
+include 'INCLUDE/footer.php';
 session_start();
 
 if (empty($_SESSION['EMAIL'])){
@@ -17,19 +18,17 @@ if (empty($_SESSION['EMAIL'])){
 }
 ?>
 <body>
-<header>
 <?php
 header_page("Principale");
 menu_page();
 ?>
-</header>
 <article>
 <?php
 afficheTableau(get_liste_vins('BDD/cave.sqlite'));
 ?>
 </article>
-<footer>
-    
-</footer>
+<?php
+footer()
+?>
 </body>
 </html>
