@@ -18,17 +18,36 @@ if (empty($_SESSION['EMAIL'])){
 }
 ?>
 <body>
-<?php
-header_page("Principale");
-menu_page();
-?>
-<article>
-<?php
-afficheTableau(get_liste_vins('BDD/cave.sqlite'));
-?>
-</article>
-<?php
-footer()
-?>
+    <?php
+    header_page("Principale");
+    menu_page();
+    ?>
+    <article>
+        <?php
+        afficheTableau(get_liste_vins('BDD/cave.sqlite'));
+        ?>
+        <form method="GET">
+            <details>
+                <summary><b>Vins par origine</b></summary>
+                <ul>
+                    <?php
+                    $liste_origine=get_origin_list('BDD/cave.sqlite');
+                    foreach ($liste_origine as $val){
+                        echo '<li><a href="?type='.$val['ORIGINE'].'">'.$val['ORIGINE'].'</a></li>';
+                    }
+                    ?>
+                </ul>
+            </details>
+
+        </form>
+        <?php
+        if(isset($_GET['type'])){
+            afficheTableau(get_vins_by_origin('BDD/cave.sqlite', $_GET['type']));
+        }
+        ?>
+    </article>
+    <?php
+    footer()
+    ?>
 </body>
 </html>

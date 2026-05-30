@@ -10,13 +10,11 @@ if (empty($mail)) {
     exit();
 }
 
-// Vérification format côté serveur
 if (!preg_match('/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/', $mail)) {
     echo json_encode(['valid' => false, 'message' => 'format']);
     exit();
 }
 
-// Vérification que l'email existe en BDD
 $liste = get_bdd_comptes('../BDD/comptes.sqlite');
 $existe = false;
 foreach ($liste as $val) {

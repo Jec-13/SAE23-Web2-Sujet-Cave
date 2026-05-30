@@ -162,3 +162,37 @@ footer {
     text-align: center;
     color: antiquewhite;
 }
+
+summary {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: rgb(214, 118, 88);
+    color: antiquewhite;
+    border-radius: 6px;
+    text-align: center;
+    font-family: arial;
+}
+
+details ul {
+    list-style: none;
+    padding: 4px;
+}
+
+details ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+    border-radius: 0.5em;
+    background-color: rgb(214, 118, 88);
+    padding: 6px 12px;
+    text-align: center;
+    display: block;
+    font-family: arial;
+}
+
+details ul li a:hover {
+    background-color: rgb(195, 183, 167);
+}
+
+article{
+    padding: 2%;
+}
