@@ -27,11 +27,24 @@ function get_liste_vins($path){
 	return $retour;
 };
 
-function get_origin_list($path){
+function get_element_list($path, $el){
 	$retour = false;
 	$madb = new PDO('sqlite:'.$path);
-	$requete = "SELECT DISTINCT ORIGINE
-				FROM vins";
+	$requete = "SELECT DISTINCT ".$el." FROM vins";
+	$resultat = $madb->query($requete);
+	$tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
+	if (sizeof($tableau) != 0) {
+		$retour = $tableau;
+	}
+	return $retour;
+}
+
+function get_element_by_name($path, $name){
+	$retour = false;
+	$madb = new PDO('sqlite:'.$path);
+	$requete = "SELECT DISTINCT *
+				FROM vins
+				WHERE CRU='".$name."'";
 	$resultat = $madb->query($requete);
 	$tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
 	if (sizeof($tableau) != 0) {
@@ -56,6 +69,22 @@ function get_vins_by_origin($path, $origine){
 	return $retour;
 }
 
+function get_liste_vinsnegoc($path){
+	$retour = false;
+	$madb = new PDO('sqlite:'.$path);
+	$requete = "SELECT vins.CRU, negociants.NOM, cave.NB_BOUTEILLES
+				FROM cave
+				JOIN negociants ON negociants.noN=cave.noN
+				JOIN vins on vins.noV=cave.noV";
+	$resultat = $madb->query($requete);
+	$tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
+	if (sizeof($tableau) != 0) {
+		$retour = $tableau;
+	}
+	return $retour;
+};
+
+
 function is_admin($mail, $path){
 	$liste_util=get_bdd_comptes($path);
 	$retour=false;
@@ -79,6 +108,10 @@ function test_connexion($mail, $pass, $path){
 		}
     }
 	return $retour;
+}
+
+function modif_element($path, $element){
+
 }
 
 function afficheTableau($tab){

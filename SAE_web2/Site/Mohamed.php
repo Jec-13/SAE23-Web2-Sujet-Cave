@@ -15,14 +15,11 @@ session_start();
 if (empty($_SESSION['EMAIL'])){
     header('Location: Connexion.php');
     exit();
-}  elseif (!$_SESSION['ADMIN']){
-    header('Location: index.php');
-    exit();
 }
 ?>
 <body>
 <?php
-header_page("Principale");
+header_page("Mohamed");
 menu_page();
 ?>
 <article>

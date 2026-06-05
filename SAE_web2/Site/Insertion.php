@@ -8,10 +8,15 @@
 </head>
 <?php
 include 'INCLUDE/header.php';
+include 'INCLUDE/functions.php';
+include 'INCLUDE/footer.php';
 session_start();
 
 if (empty($_SESSION['EMAIL'])){
     header('Location: Connexion.php');
+    exit();
+}  elseif (!$_SESSION['ADMIN']){
+    header('Location: index.php');
     exit();
 }
 ?>

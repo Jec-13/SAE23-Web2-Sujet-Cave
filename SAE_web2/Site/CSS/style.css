@@ -1,4 +1,4 @@
-.connexion_rect{
+.rect{
     justify-content: center;
     border-radius: 2em;
     background-color: rgb(214, 118, 88);
@@ -10,7 +10,7 @@
     color: antiquewhite;
 }
 
-.connexion_fields{
+.input_fields{
     justify-content: right;
     margin: 5%;
     padding: 5%;
@@ -28,7 +28,7 @@
     font-size: 2em;
 }
 
-.id_mail, .id_pass{
+.id {
     font-size: 1.2em;
 }
 

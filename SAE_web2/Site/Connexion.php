@@ -9,20 +9,20 @@ include 'INCLUDE/functions.php';
     <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
 <body>
-    <main class="connexion_rect">
+    <main class="rect">
         <h2 class="title_co">Veuillez vous connecter pour accèder au site :</h2>
-        <article class="connexion_fields">
+        <article class="input_fields">
             <form id="form1" method="POST" onsubmit="return isEmailValid(document.getElementById('id_mail').value)">
                 <div class='champ'>
-                <label class="id_mail" for="id_mail">Adresse Mail : </label>
-                <input class="id_mail" type="text" name="mail" id="id_mail" placeholder="@mail" required><br>
+                <label class="id" for="id_mail">Adresse Mail : </label>
+                <input class="id" type="text" name="mail" id="id_mail" placeholder="@mail" required><br>
                 <p id="noemail" class="noemail"> Votre email n'existe pas</p>
                 <p id="formatemail" class="formatemail"> Votre email n'a pas le bon format</p>
                 </div>
                 
                 <div class='champ'>
-                <label class="id_pass" for="id_pass">Mot de passe : </label>
-                <input class="id_pass" type="password" name="pass" id="id_pass" placeholder="Mot de passe" required><br>
+                <label class="id" for="id_pass">Mot de passe : </label>
+                <input class="id" type="password" name="pass" id="id_pass" placeholder="Mot de passe" required><br>
                 <p id="nopass" class="nopass"> Le mot de pass est incorrecte</p>
                 </div>
                 

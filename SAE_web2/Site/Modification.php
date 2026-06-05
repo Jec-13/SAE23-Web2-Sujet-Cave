@@ -8,10 +8,16 @@
 </head>
 <?php
 include 'INCLUDE/header.php';
-session_start();
+include 'INCLUDE/functions.php';
+include 'INCLUDE/footer.php';
+include 'INCLUDE/form_modif.php';
 
+session_start();
 if (empty($_SESSION['EMAIL'])){
     header('Location: Connexion.php');
+    exit();
+} elseif (!$_SESSION['ADMIN']){
+    header('Location: index.php');
     exit();
 }
 ?>
@@ -21,7 +27,31 @@ header_page("Principale");
 menu_page();
 ?>
 <article>
+    <div>
+        <form method="GET">
+            <details>
+                <summary><b>Vins par origine</b></summary>
+                <ul>
+                    <?php
+                    $liste_origine=get_liste_vinsnegoc('BDD/cave.sqlite', 'CRU');
+                    $i=0;
+                    foreach ($liste_origine as $val){
+                        $nb = strval($val['NB_BOUTEILLES']);
+                        echo '<li><a href="?type='.strval($i).'">'.$val['CRU']." provient de : ".$val['NOM']." avec {$nb} boutielles en stock</a></li>";
+                        $i+=1;
+                    }
+                    ?>
+                </ul>
+            </details>
 
+        </form>
+    </div>
+    <?php
+    if (isset($_GET['type'])){
+        $tab = from_modif($liste_origine[$_GET['type']]);
+    }
+    
+    ?>
 </article>
 <?php
 footer()

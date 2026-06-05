@@ -31,7 +31,7 @@ if (empty($_SESSION['EMAIL'])){
                 <summary><b>Vins par origine</b></summary>
                 <ul>
                     <?php
-                    $liste_origine=get_origin_list('BDD/cave.sqlite');
+                    $liste_origine=get_element_list('BDD/cave.sqlite', 'ORIGINE');
                     foreach ($liste_origine as $val){
                         echo '<li><a href="?type='.$val['ORIGINE'].'">'.$val['ORIGINE'].'</a></li>';
                     }
