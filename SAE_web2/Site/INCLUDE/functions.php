@@ -15,7 +15,7 @@ function get_bdd_comptes($path){
 function get_liste_vins($path){
 	$retour = false;
 	$madb = new PDO('sqlite:'.$path);
-	$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM as 'NOM NEGOCIANT', negociants.REGION as 'REGION NEGOCIANT'
+	$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM as 'NOM NEGOCIANT', negociants.REGION as 'REGION NEGOCIANT', cave.NB_BOUTEILLES as 'nombre de bouteilels en stock'
 				FROM cave
 				JOIN negociants ON negociants.noN=cave.noN
 				JOIN vins on vins.noV=cave.noV";
@@ -53,10 +53,24 @@ function get_element_by_name($path, $name){
 	return $retour;
 }
 
+function get_negoc_by_name($path, $name){
+	$retour = false;
+	$madb = new PDO('sqlite:'.$path);
+	$requete = "SELECT DISTINCT *
+				FROM negociants
+				WHERE NOM='".$name."'";
+	$resultat = $madb->query($requete);
+	$tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
+	if (sizeof($tableau) != 0) {
+		$retour = $tableau;
+	}
+	return $retour;
+}
+
 function get_vins_by_origin($path, $origine){
 	$retour = false;
 	$madb = new PDO('sqlite:'.$path);
-	$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM as 'NOM NEGOCIANT', negociants.REGION as 'REGION NEGOCIANT'
+	$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM as 'NOM NEGOCIANT', negociants.REGION as 'REGION NEGOCIANT', cave.NB_BOUTEILLES as 'nombre de bouteilels en stock'
 				FROM cave
 				JOIN negociants ON negociants.noN=cave.noN
 				JOIN vins on vins.noV=cave.noV
@@ -110,8 +124,23 @@ function test_connexion($mail, $pass, $path){
 	return $retour;
 }
 
-function modif_element($path, $element){
-
+function modif_element($path, $nb, $cru, $negoc){
+	$retour = 0;
+	$noV = get_element_by_name($path, $cru)[0]['noV'];
+	$noN = get_negoc_by_name($path, $negoc)[0]['noN'];
+	try {
+		$madb = new PDO('sqlite:'.$path);
+		$madb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$stmt = $madb->prepare("UPDATE cave SET NB_BOUTEILLES = :NB_BOUTEILLES WHERE noV = :noV AND noN = :noN");
+		$stmt->bindParam(':NB_BOUTEILLES', $nb);
+		$stmt->bindParam(':noV', $noV);
+		$stmt->bindParam(':noN', $noN);
+		$stmt->execute();
+		if ($stmt->rowCount() > 0) $retour = 1;
+	} catch (PDOException $e) {
+		$retour = 0;
+	}
+	return $retour;
 }
 
 function afficheTableau($tab){

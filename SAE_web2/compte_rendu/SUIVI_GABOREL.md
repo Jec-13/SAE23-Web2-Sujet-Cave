@@ -2,46 +2,35 @@
 
 ---
 
-## Point d'avancement séance n°03
+## Point d'avancement séance n°05
 
-**Date :** 29/05/2026  
+**Date :** 05/06/2026  
 **Lieu de travail :** Domicile
 **Méthode de travail :** Seul  
 
 ---
-
+lien du site : **https://lucien-gaborel.byh.fr/**
+---
 ### Tâches prévues pendant la séance :
-- [ ] Tâche 1 faire `index.php`
-- [ ] Tâche 2 faire `footer.php`
-- [ ] Tâche 3 faire `header.php`
-- [ ] Tâche 4 héberger le site web en publique
-- [ ] Tâche 5 finir `connexion.php`
-  + fetch et la vérification d'email
+- [ ] Tâche 1 finir `modification.php` (sans fetch)
+- [ ] Tâche 2 changer `script.js` et `connexion.php` pour enlever fetch proprement
 
 ---
 
 ### Tâches traitées pendant la séance :
-- [x] Tâche 1 faire `header.php`
-- [x] Tâche 2 finir `connexion.php`
-- [x] Tâche 5 héberger le site web en publique
-  + lien : **https://lucien-gaborel.byh.fr/**
-- [ ] Tâche 4 faire `index.php`
-  + manque le footer et la partie de ETU2 (Mohamed)
-  + le header, menu, tableau avec image est fait
-- [ ] Tâche 5 faire `footer.php`
-
+- [x] Tâche 1 finir `modification.php` (sans fetch)
+- [ ] Tâche 2 changer `script.js` et `connexion.php` pour enlever fetch proprement
 
 ---
 
 ### Problèmes rencontrés :
-- Problème 1 :  Pas asser de temps pour commencer le footer.
-- Problème 2 : Difficulter avec fetch qui m'ont fait perdre du temps.
+- Problème 1 : Base de donnée qui ne souvrait pas correctement sur mon ordinateur personnel.
 > Ce problème a été résolue
 
 ---
 
 ### Tâches prévues avant la prochaine séance :
-- [ ] Tâche A finir `index.php` et `footer.php`
-- [ ] Tâche B Commencer `modification.php`
+- [ ] Tâche A finir `modification.php` avec fetch
+- [ ] Tâche B changer `script.js` et `connexion.php` pour enlever fetch proprement
 
 ---

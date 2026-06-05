@@ -48,7 +48,7 @@ menu_page();
     </div>
     <?php
     if (isset($_GET['type'])){
-        $tab = from_modif($liste_origine[$_GET['type']]);
+        $tab = from_modif($liste_origine[$_GET['type']], 'BDD/cave.sqlite');
     }
     
     ?>

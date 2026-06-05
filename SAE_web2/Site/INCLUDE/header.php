@@ -1,3 +1,4 @@
+
 <?php
 function header_page($nom){
     ?>
@@ -21,12 +22,12 @@ function menu_page(){
     <div class='menu_page'>
     <ul class="liste_Page">
     <li  class='liste_Page' ><a class="btn-menu" href='index.php'>Page principale</a></li>
+    <li class='liste_Page' ><a class='btn-menu' href='Mohamed.php'>Page de Mohamed</a></li>
     <?php 
     if ($_SESSION['ADMIN']){
         echo "<li class='liste_Page' ><a class='btn-menu' href='Insertion.php'>Page d'insertion</a></li>";
         echo "<li class='liste_Page' ><a class='btn-menu' href='Modification.php'>Page de modification</a></li>";
         echo "<li class='liste_Page' ><a class='btn-menu' href='Suppression.php'>Page de suppression</a></li>";
-        echo "<li class='liste_Page' ><a class='btn-menu' href='Mohamed.php'>Page de Mohamed</a></li>";
     }
     ?>
     </ul>

@@ -32,7 +32,7 @@
     font-size: 1.2em;
 }
 
-.noemail, .formatemail, .nopass, .erch{
+.noemail, .formatemail, .nopass, .erch, .pareil{
     display: none;
     color: red;
     border-color: red;
