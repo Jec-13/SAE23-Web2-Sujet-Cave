@@ -1,3 +1,25 @@
+<?php
+session_start();
+include 'INCLUDE/header.php';
+include 'INCLUDE/functions.php';
+include 'INCLUDE/footer.php';
+include 'INCLUDE/form_modif.php';
+
+if (empty($_SESSION['EMAIL'])){
+    header('Location: Connexion.php');
+    exit();
+} elseif (!$_SESSION['ADMIN']){
+    header('Location: index.php');
+    exit();
+}
+
+// === Requête AJAX : on renvoie SEULEMENT le tableau ===
+if (isset($_POST['ajax']) && isset($_GET['type'])) {
+    $liste_origine = get_liste_vinsnegoc('BDD/cave.sqlite', 'CRU');
+    from_modif($liste_origine[$_GET['type']], 'BDD/cave.sqlite', $_GET['type']);
+    exit();   // on s'arrête : pas de HTML complet
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,21 +28,6 @@
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
     <title>Modification Cave</title>
 </head>
-<?php
-include 'INCLUDE/header.php';
-include 'INCLUDE/functions.php';
-include 'INCLUDE/footer.php';
-include 'INCLUDE/form_modif.php';
-
-session_start();
-if (empty($_SESSION['EMAIL'])){
-    header('Location: Connexion.php');
-    exit();
-} elseif (!$_SESSION['ADMIN']){
-    header('Location: index.php');
-    exit();
-}
-?>
 <body>
 <?php
 header_page("Principale");
@@ -43,14 +50,12 @@ menu_page();
                     ?>
                 </ul>
             </details>
-
         </form>
     </div>
     <?php
     if (isset($_GET['type'])){
-        $tab = from_modif($liste_origine[$_GET['type']], 'BDD/cave.sqlite');
+        from_modif($liste_origine[$_GET['type']], 'BDD/cave.sqlite', $_GET['type']);
     }
-    
     ?>
 </article>
 <?php

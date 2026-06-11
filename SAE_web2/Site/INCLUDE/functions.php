@@ -144,6 +144,7 @@ function modif_element($path, $nb, $cru, $negoc){
 }
 
 function afficheTableau($tab){
+	echo '<div id="tableau">';
     echo '<table>';	
     echo '<tr>';
     foreach($tab[0] as $colonne => $valeur){
@@ -163,6 +164,7 @@ function afficheTableau($tab){
         echo "</tr>\n";
     }
     echo '</table>';
+	echo '</div>';
 }
 
 ?>
