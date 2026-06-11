@@ -36,6 +36,9 @@ include 'INCLUDE/functions.php';
     <?php 
     session_start();
 
+    $_SESSION["xt"] = -1;
+    $_SESSION["yt"] = -1;
+
     if (!empty($_SESSION['EMAIL'])){
         header('Location: index.php');
         exit();

@@ -10,6 +10,7 @@
 include 'INCLUDE/header.php';
 include 'INCLUDE/functions.php';
 include 'INCLUDE/footer.php';
+include 'INCLUDE/capcha.php';
 session_start();
 
 if (empty($_SESSION['EMAIL'])){
@@ -26,10 +27,12 @@ header_page("Principale");
 menu_page();
 ?>
 <article>
-
+<?php
+capcha();
+?>
 </article>
 <?php
-footer()
+footer();
 ?>
 </body>
 </html>

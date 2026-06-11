@@ -26,6 +26,7 @@ if (empty($_SESSION['EMAIL'])){
         <?php
         afficheTableau(get_liste_vins('BDD/cave.sqlite'));
         ?>
+
         <form method="GET">
             <details>
                 <summary><b>Vins par origine</b></summary>

@@ -196,3 +196,15 @@ details ul li a:hover {
 article{
     padding: 2%;
 }
+
+.boutton_capcha {
+    border:none; 
+    background:none; 
+    cursor:pointer;
+}
+
+.title_capcha {
+    font-family: Arial;
+    font-family: 24px;
+    color: red;
+}
