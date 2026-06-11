@@ -1,58 +1,31 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    const mailInput = document.getElementById('id_mail');
-    if (mailInput) {
-        mailInput.addEventListener('blur', function () {
-            checkMailFetch(this.value);
-        });
-    }
-});
-
-let mailValide = false;
-
-function checkMailFetch(email) {
-    document.getElementById('formatemail').style.display = 'none';
-    document.getElementById('noemail').style.display = 'none';
-
-    if (email === '') {
-        mailValide = false;
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append('mail', email);
-
-    fetch('INCLUDE/check_mail.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.valid) {
-            mailValide = true;
-        } else {
-            mailValide = false;
-            if (data.message === 'format') {
-                document.getElementById('formatemail').style.display = 'block';
-            } else if (data.message === 'nomail') {
-                document.getElementById('noemail').style.display = 'block';
-            }
-        }
-    })
-    .catch(error => {
-        console.error('Erreur fetch :', error);
-        mailValide = false;
-    });
-}
-
 function isEmailValid(email) {
-    if (!mailValide) {
-        checkMailFetch(email);
-        return false;
+    $retour = true;
+    const regex = /^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(email)) {
+        ChangeDisplay('formatemail');
+        $retour = false;
+    } else {
+        document.getElementById('formatemail').style.display = 'none';
     }
-    return true;
+    return $retour;
 }
 
 function ChangeDisplay(el) {
     document.getElementById(el).style.display = 'block';
 }
+
+function modifier(event, el, type) {
+    event.preventDefault();
+    const data = new FormData();
+    data.append(el, document.getElementById(el).value);
+    data.append('ajax', '1');
+
+    fetch('?type=' + type, { method: 'POST', body: data })
+    .then(r => r.text())
+    .then(txt => {
+        document.getElementById('tableau').outerHTML = txt;
+    })
+    .catch(e => console.error(e));
+}
+
