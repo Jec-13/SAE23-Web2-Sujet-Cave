@@ -27,9 +27,7 @@ header_page("Principale");
 menu_page();
 ?>
 <article>
-<?php
-capcha();
-?>
+
 </article>
 <?php
 footer();
