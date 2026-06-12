@@ -27,6 +27,22 @@ function get_liste_vins($path){
 	return $retour;
 };
 
+function get_liste_vins_one($path, $cru, $nego){
+	$retour = false;
+	$madb = new PDO('sqlite:'.$path);
+	$requete = "SELECT vins.CRU, vins.COULEUR, vins.ORIGINE, negociants.NOM as 'NOM NEGOCIANT', negociants.REGION as 'REGION NEGOCIANT', cave.NB_BOUTEILLES as 'nombre de bouteilles en stock'
+				FROM cave
+				JOIN negociants ON negociants.noN=cave.noN
+				JOIN vins on vins.noV=cave.noV
+				WHERE vins.CRU='$cru' AND negociants.NOM='$nego'";
+	$resultat = $madb->query($requete);
+	$tableau = $resultat->fetchAll(PDO::FETCH_ASSOC);
+	if (sizeof($tableau) != 0) {
+		$retour = $tableau;
+	}
+	return $retour;
+};
+
 function get_element_list($path, $el){
 	$retour = false;
 	$madb = new PDO('sqlite:'.$path);
@@ -86,7 +102,7 @@ function get_vins_by_origin($path, $origine){
 function get_liste_vinsnegoc($path){
 	$retour = false;
 	$madb = new PDO('sqlite:'.$path);
-	$requete = "SELECT vins.CRU, negociants.NOM, cave.NB_BOUTEILLES
+	$requete = "SELECT vins.CRU, vins.COULEUR ,negociants.NOM, cave.NB_BOUTEILLES
 				FROM cave
 				JOIN negociants ON negociants.noN=cave.noN
 				JOIN vins on vins.noV=cave.noV";

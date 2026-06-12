@@ -15,17 +15,37 @@ function ChangeDisplay(el) {
     document.getElementById(el).style.display = 'block';
 }
 
-function modifier(event, el, type) {
-    event.preventDefault();
-    const data = new FormData();
-    data.append(el, document.getElementById(el).value);
-    data.append('ajax', '1');
+async function modifier(form, nego, cru, coord, nb_prec) {
 
-    fetch('?type=' + type, { method: 'POST', body: data })
-    .then(r => r.text())
-    .then(txt => {
-        document.getElementById('tableau').outerHTML = txt;
-    })
-    .catch(e => console.error(e));
+    let Nb_bouteilles = form.elements["Nb_bouteilles"].value;
+
+    let scase = form.elements["case"].value;
+
+    console.log(form.elements["case"].value);
+
+    if (Nb_bouteilles==""){
+        ChangeDisplay('remp');
+    } else if (scase=="" || coord !== scase){
+        ChangeDisplay('ercap');
+    } else if (Nb_bouteilles == nb_prec){
+        ChangeDisplay('erch');
+    }
+    else{
+        try {
+
+            const reponse = await fetch('INCLUDE/fetch_modif.php', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "Nb_bouteilles="+Nb_bouteilles+"&NAME="+nego+"&CRU="+cru
+            });
+
+            const retour = await reponse.text();
+            document.getElementById('resultat').innerHTML = retour;
+            console.log(reponse);
+
+        } catch (error) {
+            console.error('Erreur :', error);
+        }
+    }
 }
 

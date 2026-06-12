@@ -32,7 +32,11 @@
     font-size: 1.2em;
 }
 
-.noemail, .formatemail, .nopass, .erch, .pareil{
+.n {
+    display: none;
+}
+
+.noemail, .formatemail, .nopass, .erch, .pareil, .remp, .ercap{
     display: none;
     color: red;
     border-color: red;
@@ -104,7 +108,6 @@ table {
     width: 80%;
     margin: 12px auto;
     font-family: Arial;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 th {
@@ -202,9 +205,27 @@ article{
     background:none; 
     cursor:pointer;
 }
-
+ 
 .title_capcha {
     font-family: Arial;
-    font-family: 24px;
+    font-size: 2em;
     color: red;
+    margin: auto;
+    padding: auto;
+    text-decoration: underline;
+}
+
+.table-c {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 12px auto;
+}
+
+.td-c {
+    padding: 10px;
+    border-bottom: 1px solid antiquewhite;
+}
+
+.tr-c {
+    background-color: #f5f0f0;
 }

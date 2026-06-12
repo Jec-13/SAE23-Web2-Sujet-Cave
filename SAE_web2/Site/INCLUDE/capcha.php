@@ -7,7 +7,7 @@ function create_img($xt, $yt, $x, $y){
     imagealphablending($fond, true);
 
     if ($xt === $x && $yt === $y){
-        imagecopy($fond, $golf, 400, 300, 0, 0, imagesx($golf), imagesy($golf));
+        imagecopy($fond, $golf, rand(0,500), rand(0,500), 0, 0, imagesx($golf), imagesy($golf));
     }
 
     ob_start();
@@ -22,11 +22,11 @@ function affiche_golf($xt, $yt){
     echo '<table>';	
 
     for($x = 0 ; $x < 3 ; $x++){
-        echo '<tr>';
+        echo '<tr class="tr-c">';
         for($y = 0 ; $y < 3 ; $y++){
             $img = create_img($xt, $yt, $x, $y);
 
-            echo "<td><button type='submit' class='boutton_capcha' name='case' value='$x$y'>";
+            echo "<td class='td-c'><button id='case' type='button' class='boutton_capcha' name='case' value='$x$y'>";
             echo "<img id='img_golf' src='data:image/png;base64,$img' width='50'/>";
             echo "</button></td>";
         }
@@ -34,26 +34,5 @@ function affiche_golf($xt, $yt){
     }
     echo '</table>';
 }
-function capcha(){
-    $xt = rand(0,2);
-    $yt = rand(0,2);
 
-    ?>
-    <form method='POST'>
-    <label class="title_capcha">Faites un <b>ALL IN ONE</b></label>
-    <?php
-    affiche_golf($xt, $yt);
-    ?>
-    </form>
-    <?php
-    if (!empty($_POST) && isset($_POST['case'])){
-        if ($_POST['case'] == $_SESSION["xt"].$_SESSION["yt"]){
-            var_dump("gagner !");
-        } else {
-            var_dump("perdu");
-        }
-    }
-    $_SESSION["xt"] = $xt;
-    $_SESSION["yt"] = $yt;
-}
 ?>

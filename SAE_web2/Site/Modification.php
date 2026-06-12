@@ -44,7 +44,7 @@ menu_page();
                     $i=0;
                     foreach ($liste_origine as $val){
                         $nb = strval($val['NB_BOUTEILLES']);
-                        echo '<li><a href="?type='.strval($i).'">'.$val['CRU']." provient de : ".$val['NOM']." avec {$nb} boutielles en stock</a></li>";
+                        echo '<li><a href="?type='.strval($i).'">'.$val['CRU']." ".$val['COULEUR']." provient de : ".$val['NOM']." avec {$nb} boutielles en stock</a></li>";
                         $i+=1;
                     }
                     ?>
@@ -54,7 +54,7 @@ menu_page();
     </div>
     <?php
     if (isset($_GET['type'])){
-        from_modif($liste_origine[$_GET['type']], 'BDD/cave.sqlite', $_GET['type']);
+        from_modif($liste_origine[$_GET['type']]);
     }
     ?>
 </article>
