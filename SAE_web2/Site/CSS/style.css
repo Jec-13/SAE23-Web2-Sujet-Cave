@@ -45,6 +45,23 @@
     border-style: solid;
     text-align: center;
 }
+.ercap2{
+    color: red;
+    border-color: red;
+    border-radius: 0.2em;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
+.succès{
+    display: none;
+    color: gold;
+    border-color: gold;
+    border-radius: 0.2em;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
 
 body {
     background-color: antiquewhite;

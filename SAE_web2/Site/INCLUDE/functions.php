@@ -195,7 +195,7 @@ function afficheTableau($tab){
         echo '<tr>';
         foreach($ligne as $colonne => $cellule){
             if($colonne == 'CRU'){ // si la colone est cru alors on affiche une image
-                echo "<td><img src='IMAGES/".$cellule.".jpg' width='100px'/>" . $cellule . "</td>";
+                echo "<td><img src='IMAGES/".$cellule.".jpg' alt='$cellule' width='100'/>" . $cellule . "</td>";
             } else {
                 echo "<td>" . $cellule . "</td>";
             }

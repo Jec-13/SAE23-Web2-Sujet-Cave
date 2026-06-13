@@ -1,6 +1,7 @@
 
 <?php
 function header_page($nom){
+    // fonction qui affcihe le header sur tout les sites
     ?>
     <header>
     <div class='header_page'>

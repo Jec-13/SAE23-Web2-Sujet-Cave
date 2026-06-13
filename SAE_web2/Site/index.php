@@ -1,3 +1,14 @@
+<?php
+include 'INCLUDE/header.php';
+include 'INCLUDE/functions.php';
+include 'INCLUDE/footer.php';
+session_start();
+
+if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien connecter sinon redirection vers la page de connexion
+    header('Location: Connexion.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,27 +17,16 @@
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
     <title>Index Cave</title>
 </head>
-<?php
-include 'INCLUDE/header.php';
-include 'INCLUDE/functions.php';
-include 'INCLUDE/footer.php';
-session_start();
-
-if (empty($_SESSION['EMAIL'])){
-    header('Location: Connexion.php');
-    exit();
-}
-?>
 <body>
     <?php
-    header_page("Principale");
-    menu_page();
+    header_page("Principale"); // affichage du header
+    menu_page(); // affichage de menu de navigation entre les pages
     ?>
     <article>
         <?php
-        afficheTableau(get_liste_vins('BDD/cave.sqlite'));
+        afficheTableau(get_liste_vins('BDD/cave.sqlite')); // affichage du tableau avec tout les vins disponible 
         ?>
-
+        <!-- fait par Lucien (ETU1) -->
         <form method="GET">
             <details>
                 <summary><b>Vins par origine</b></summary>
@@ -48,7 +48,7 @@ if (empty($_SESSION['EMAIL'])){
         ?>
     </article>
     <?php
-    footer()
+    footer() // affichage du footer
     ?>
 </body>
 </html>

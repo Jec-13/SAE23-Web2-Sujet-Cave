@@ -33,7 +33,7 @@ function from_modif($name){
                     // Utilisation d'un bouton ratio pour pouvoir facilement récupérer la valeur choise par l'utilisateur
                     echo "<td class='td-c'><input type='radio' name='case' value='$x$y'/>";
                     echo "<img id='img_golf' src='data:image/png;base64,$img' width='50'/>";
-                    echo "</button></td>";
+                    echo "</td>";
                 }
                 echo "</tr>\n";
             }
@@ -44,8 +44,9 @@ function from_modif($name){
         <input class='btn' type='button' value='Changer' onclick='modifier(this.form, "<?php echo $name["NOM"] ?>", "<?php echo $name["CRU"] ?>", "<?php echo $xt.$yt ?>", "<?php echo $name["NB_BOUTEILLES"] ?>")' />
         <!-- Gestion des warning sur une entrer dde chanp différents -->
         <p id='erch' class='erch'> Le nombre doit être différents de celui actuelle</p>
-        <p id='remp' class='remp'> Le chanmp doit être remplie !</p>
-        <p id='ercap' class='ercap'> Le capcha doit être résolue !</p>
+        <p id='remp' class='remp'> Le chanmp doit être remplie</p>
+        <p id='ercap' class='ercap'> Le capcha doit être résolue</p>
+        <p id='succès' class='succès'>La modification a bien été faite !</p>
         </div>
     </form>
     </div>
