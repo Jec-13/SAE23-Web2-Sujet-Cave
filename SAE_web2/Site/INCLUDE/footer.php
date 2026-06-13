@@ -1,4 +1,5 @@
 <?php
+// fonction pour le footer des pages du site
 function footer(){
     
     ?>
@@ -7,7 +8,7 @@ function footer(){
             <p class="merci">Merci pour votre visite sur le site de la meilleurs cave à vins "Chez Lucas" !</p>
             <div class="second-footer">
     <?php
-    echo "<p class=ip>votre ip est : <b>".$_SERVER['REMOTE_ADDR']."</b></p>";
+    echo "<p class=ip>votre ip est : <b>".$_SERVER['REMOTE_ADDR']."</b></p>"; // récupération de l'adress ip
     ?>
             <a class="btn-menu" href='index.php'>Page principale</a>
             </div>

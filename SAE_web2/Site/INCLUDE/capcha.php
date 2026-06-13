@@ -1,38 +1,22 @@
 <?php
 function create_img($xt, $yt, $x, $y){
 
-    $fond = imagecreatefromjpeg('IMAGES/herbe.jpg');
-    $golf = imagecreatefrompng('IMAGES/trou-golf.png');
+    $fond = imagecreatefromjpeg('IMAGES/herbe.jpg'); // chargement de l'image d'herbe
+    $golf = imagecreatefrompng('IMAGES/trou-golf.png'); // chargement de l'image du trou de golf (avec un fond transparent)
 
-    imagealphablending($fond, true);
+    imagealphablending($fond, true); // pour prendre en compte l'opaciter
 
-    if ($xt === $x && $yt === $y){
+    if ($xt === $x && $yt === $y){ // afficher l'image du trou de golf si les coordonner sont bonne et avec des coordonné aléatoire sur l'image
         imagecopy($fond, $golf, rand(0,500), rand(0,500), 0, 0, imagesx($golf), imagesy($golf));
     }
 
     ob_start();
-    imagepng($fond);
-    $imageData = ob_get_clean();
-    $retour = base64_encode($imageData);
+    imagepng($fond); // création de la nouvelle image
+    $imageData = ob_get_clean(); // récupération de l'image 
+    $retour = base64_encode($imageData); // encodage de l'image pour ensuite pouvoir l'afficher dans une balise img
 
     return $retour;
 }
 
-function affiche_golf($xt, $yt){
-    echo '<table>';	
-
-    for($x = 0 ; $x < 3 ; $x++){
-        echo '<tr class="tr-c">';
-        for($y = 0 ; $y < 3 ; $y++){
-            $img = create_img($xt, $yt, $x, $y);
-
-            echo "<td class='td-c'><button id='case' type='button' class='boutton_capcha' name='case' value='$x$y'>";
-            echo "<img id='img_golf' src='data:image/png;base64,$img' width='50'/>";
-            echo "</button></td>";
-        }
-        echo "</tr>\n";
-    }
-    echo '</table>';
-}
 
 ?>
