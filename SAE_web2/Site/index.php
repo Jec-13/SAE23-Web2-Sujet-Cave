@@ -4,7 +4,7 @@ include 'INCLUDE/functions.php';
 include 'INCLUDE/footer.php';
 session_start();
 
-if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien connecter sinon redirection vers la page de connexion
+if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien connecté sinon redirection vers la page de connexion
     header('Location: Connexion.php');
     exit();
 }
@@ -20,11 +20,11 @@ if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien conn
 <body>
     <?php
     header_page("Principale"); // affichage du header
-    menu_page(); // affichage de menu de navigation entre les pages
+    menu_page(); // affichage du menu de navigation entre les pages
     ?>
     <article>
         <?php
-        afficheTableau(get_liste_vins('BDD/cave.sqlite')); // affichage du tableau avec tout les vins disponible 
+        afficheTableau(get_liste_vins('BDD/cave.sqlite')); // affichage du tableau avec tous les vins disponibles
         ?>
         <!-- fait par Lucien (ETU1) -->
         <form method="GET">

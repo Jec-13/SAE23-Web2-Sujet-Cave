@@ -1,24 +1,24 @@
 <?php
 include "capcha.php";
 function from_modif($name){
-    // $name est un tableau contenant les informations de l'élemant choisie
+    // $name est un tableau contenant les informations de l'élément choisi
     ?>
     <div id="tableau">
     <nav class="rect">
-    <!-- affichage de l'élément modifier -->
-    <h3 class="title_co">Vous modifier l'élément : <?php echo $name["CRU"] ?> <?php echo $name["COULEUR"] ?> de <?php echo $name["NOM"] ?></h3>
+    <!-- affichage de l'élément modifié -->
+    <h3 class="title_co">Vous modifiez l'élément : <?php echo $name["CRU"] ?> <?php echo $name["COULEUR"] ?> de <?php echo $name["NOM"] ?></h3>
     <div class="input_fields">
     <form id='form' method='POST' onsubmit='return false'>
             <div class='champ'>
                 <?php
-                // demande à l'utilisateur de changer le nombre de boutielles
+                 // demande à l'utilisateur de changer le nombre de bouteilles
                 echo "<label class='id' for='Nb_bouteilles'>Nombre de bouteilles en stock :</label>";
                 echo "<input class='id' type='number' name='Nb_bouteilles' id='Nb_bouteilles' value='".$name["NB_BOUTEILLES"]."' required><br>";
                 ?>
             </div>
             <?php
-            // affichage du capcha
-            // choix de coordonné aléatoire sur lequel se trouveras l'image avec le drapeau
+            // affichage du captcha
+            // choix de coordonnées aléatoires sur lesquelles se trouvera l'image avec le drapeau
             $xt = rand(0,2);
             $yt = rand(0,2);
 
@@ -30,7 +30,7 @@ function from_modif($name){
                     // création de l'image dans un tableau
                     $img = create_img($xt, $yt, $x, $y);
 
-                    // Utilisation d'un bouton ratio pour pouvoir facilement récupérer la valeur choise par l'utilisateur
+                    // Utilisation d'un bouton radio pour pouvoir facilement récupérer la valeur choisie par l'utilisateur
                     echo "<td class='td-c'><input type='radio' name='case' value='$x$y'/>";
                     echo "<img id='img_golf' src='data:image/png;base64,$img' width='50'/>";
                     echo "</td>";
@@ -40,13 +40,13 @@ function from_modif($name){
             echo '</table>';
             ?>
         <div class='champ'>
-        <!-- Envoie du formulaire à fetch pour faire les vérification -->
+        <!-- Envoi du formulaire à fetch pour faire les vérifications -->
         <input class='btn' type='button' value='Changer' onclick='modifier(this.form, "<?php echo $name["NOM"] ?>", "<?php echo $name["CRU"] ?>", "<?php echo $xt.$yt ?>", "<?php echo $name["NB_BOUTEILLES"] ?>")' />
-        <!-- Gestion des warning sur une entrer dde chanp différents -->
-        <p id='erch' class='erch'> Le nombre doit être différents de celui actuelle</p>
-        <p id='remp' class='remp'> Le chanmp doit être remplie</p>
-        <p id='ercap' class='ercap'> Le capcha doit être résolue</p>
-        <p id='succès' class='succès'>La modification a bien été faite !</p>
+        <!-- Gestion des warnings sur une entrée de champ différente -->
+        <p id='erch' class='erch'> Le nombre doit être différent de celui actuel</p>
+        <p id='remp' class='remp'> Le champ doit être rempli</p>
+        <p id='ercap' class='ercap'> Le captcha doit être résolu</p>
+        <p id='succes' class='succes'> La modification a bien été faite !</p>
         </div>
     </form>
     </div>

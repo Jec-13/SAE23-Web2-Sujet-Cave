@@ -42,8 +42,8 @@
 
 .noemail, .formatemail, .nopass, .erch, .pareil, .remp, .ercap{
     display: none;
-    color: rgb(129, 0, 0);
-    border-color: rgb(129, 0, 0);
+    color: red;
+    border-color: red;
     border-radius: 0.2em;
     border-width: 1px;
     border-style: solid;
@@ -51,14 +51,14 @@
     font-size: 1.2em;
 }
 .ercap2{
-    color: rgb(129, 0, 0);
-    border-color: rgb(129, 0, 0);
+    color: red;
+    border-color: red;
     border-radius: 0.2em;
     border-width: 1px;
     border-style: solid;
     text-align: center;
 }
-.succès{
+.succes{
     display: none;
     color: gold;
     border-color: gold;

@@ -5,10 +5,10 @@ include 'INCLUDE/functions.php';
 include 'INCLUDE/footer.php';
 include 'INCLUDE/form_modif.php';
 
-if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien connecter sinon redirection vers la page de connexion
+if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien connecté sinon redirection vers la page de connexion
     header('Location: Connexion.php');
     exit();
-} elseif (!$_SESSION['ADMIN']){ // vérifiaction que l'utilisateur est bien administrateur sinon redirection vers la page d'index
+} elseif (!$_SESSION['ADMIN']){ // vérification que l'utilisateur est bien administrateur sinon redirection vers la page d'index
     header('Location: index.php');
     exit();
 }
@@ -25,7 +25,7 @@ if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien conn
 <body>
 <?php
 header_page("Principale"); // affichage du header
-menu_page(); // affichage de menu de navigation entre les pages
+menu_page(); // affichage du menu de navigation entre les pages
 ?>
 <article>
     <div>
@@ -34,11 +34,11 @@ menu_page(); // affichage de menu de navigation entre les pages
                 <summary><b>Vins par origine</b></summary>
                 <ul>
                     <?php
-                    $liste_origine=get_liste_vinsnegoc('BDD/cave.sqlite'); // renvoie le cru la couleur et le nom du négociant de chaque vins
+                    $liste_origine=get_liste_vinsnegoc('BDD/cave.sqlite'); // renvoie le cru, la couleur et le nom du négociant de chaque vin
                     $i=0;
                     foreach ($liste_origine as $val){
-                        $nb = strval($val['NB_BOUTEILLES']); // affichage d'un bouton déroulant pour afficher toute les vins à modifier
-                        echo '<li><a href="?type='.strval($i).'">'.$val['CRU']." ".$val['COULEUR']." provient de : ".$val['NOM']." avec {$nb} boutielles en stock</a></li>";
+                        $nb = strval($val['NB_BOUTEILLES']);// affichage d'un bouton déroulant pour afficher tous les vins à modifier
+                        echo '<li><a href="?type='.strval($i).'">'.$val['CRU']." ".$val['COULEUR']." provient de : ".$val['NOM']." avec {$nb} bouteilles en stock</a></li>";
                         $i+=1;
                     }
                     ?>
@@ -47,7 +47,7 @@ menu_page(); // affichage de menu de navigation entre les pages
         </form>
     </div>
     <?php
-    if (!empty($_GET) && isset($_GET['type'])){ // si le formulaire est bon on appelle form_modif.php pour faire le changement
+    if (!empty($_GET) && isset($_GET['type'])){ // si le formulaire est bon on appelle form_modif.php pour faire le ch
         from_modif($liste_origine[$_GET['type']]);
     }
     ?>

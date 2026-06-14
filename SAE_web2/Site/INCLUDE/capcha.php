@@ -4,9 +4,9 @@ function create_img($xt, $yt, $x, $y){
     $fond = imagecreatefromjpeg('IMAGES/herbe.jpg'); // chargement de l'image d'herbe
     $golf = imagecreatefrompng('IMAGES/trou-golf.png'); // chargement de l'image du trou de golf (avec un fond transparent)
 
-    imagealphablending($fond, true); // pour prendre en compte l'opaciter
+    imagealphablending($fond, true);// pour prendre en compte l'opacité
 
-    if ($xt === $x && $yt === $y){ // afficher l'image du trou de golf si les coordonner sont bonne et avec des coordonné aléatoire sur l'image
+    if ($xt === $x && $yt === $y){ // afficher l'image du trou de golf si les coordonnées sont bonnes et avec des coordonnées aléatoires sur l'image
         imagecopy($fond, $golf, rand(0,500), rand(0,500), 0, 0, imagesx($golf), imagesy($golf));
     }
 
@@ -17,6 +17,4 @@ function create_img($xt, $yt, $x, $y){
 
     return $retour;
 }
-
-
 ?>
