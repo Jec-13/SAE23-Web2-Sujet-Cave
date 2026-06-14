@@ -1,13 +1,13 @@
 .rect{
     justify-content: center;
     border-radius: 2em;
-    background-color: rgb(214, 118, 88);
+    background-color: rgb(176, 95, 70);
     margin-right: 30%;
     margin-left: 30%;
     margin-top: 10%;
     padding: 3%;
     font-family: Arial;
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
 }
 
 .input_fields{
@@ -15,7 +15,7 @@
     margin: 5%;
     padding: 5%;
     border-style: solid;
-    border-color: antiquewhite;
+    border-color: rgb(255, 246, 235);
     border-width: 2px;
     border-radius: 0.5em;
     font-size: 1.2em;
@@ -37,7 +37,7 @@
     display: none;
 }
 .btn {
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .noemail, .formatemail, .nopass, .erch, .pareil, .remp, .ercap{
@@ -69,13 +69,13 @@
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: rgb(255, 246, 235);
 }
 
 .header_page{
-    background-color: rgb(214, 118, 88);
+    background-color: rgb(176, 95, 70);
     font-family: Arial;
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
     padding: 3%;
     justify-content: center;
 }
@@ -98,7 +98,7 @@ body {
 
 .menu_page{
     background-color: rgb(60, 60, 60);
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
     padding: 1%;
     font-family: Arial;
 }
@@ -112,8 +112,8 @@ body {
 }
 
 .btn-menu {
-    background-color: antiquewhite;
-    color: rgb(214, 118, 88);
+    background-color: rgb(255, 246, 235);
+    color: rgb(176, 95, 70);
     border: none;
     padding: 8px;
     border-radius: 6px;
@@ -133,8 +133,8 @@ table {
 }
 
 th {
-    background-color: rgb(214, 118, 88);
-    color: antiquewhite;
+    background-color: rgb(176, 95, 70);
+    color: rgb(255, 246, 235);
     padding: 12px;
     text-align: center;
     font-size: 14px;
@@ -142,7 +142,7 @@ th {
 
 td {
     padding: 10px;
-    border-bottom: 1px solid antiquewhite;
+    border-bottom: 1px solid rgb(255, 246, 235);
 }
 
 tr:nth-child(even) {
@@ -163,7 +163,7 @@ td img {
 }
 
 footer {
-    background-color: rgb(214, 118, 88);
+    background-color: rgb(176, 95, 70);
     font-family: arial;
     padding: 2%;
 }
@@ -171,13 +171,13 @@ footer {
 .main-footer {
     border-radius: 2em;
     padding: 2em;
-    border-color: antiquewhite;
+    border-color: rgb(255, 246, 235);
     border-width: 2px;
     border-style: solid;
 }
 
 .merci {
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
     text-align: center;
     font-size: 20px;
     text-decoration: underline;
@@ -185,14 +185,14 @@ footer {
 
 .second-footer{
     text-align: center;
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
 }
 
 summary {
     cursor: pointer;
     padding: 8px 16px;
-    background-color: rgb(214, 118, 88);
-    color: antiquewhite;
+    background-color: rgb(176, 95, 70);
+    color: rgb(255, 246, 235);
     border-radius: 6px;
     text-align: center;
     font-family: arial;
@@ -204,10 +204,10 @@ details ul {
 }
 
 details ul li a {
-    color: antiquewhite;
+    color: rgb(255, 246, 235);
     text-decoration: none;
     border-radius: 0.5em;
-    background-color: rgb(214, 118, 88);
+    background-color: rgb(176, 95, 70);
     padding: 6px 12px;
     text-align: center;
     display: block;
@@ -236,7 +236,7 @@ article{
 
 .td-c {
     padding: 10px;
-    border-bottom: 1px solid antiquewhite;
+    border-bottom: 1px solid rgb(255, 246, 235);
 }
 
 .tr-c {
