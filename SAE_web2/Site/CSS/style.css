@@ -1,7 +1,7 @@
 .rect{
     justify-content: center;
     border-radius: 2em;
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     margin-right: 30%;
     margin-left: 30%;
     margin-top: 10%;
@@ -73,7 +73,7 @@ body {
 }
 
 .header_page{
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     font-family: Arial;
     color: rgb(255, 246, 235);
     padding: 3%;
@@ -113,7 +113,7 @@ body {
 
 .btn-menu {
     background-color: rgb(255, 246, 235);
-    color: rgb(176, 95, 70);
+    color: rgb(98, 43, 24);
     border: none;
     padding: 8px;
     border-radius: 6px;
@@ -133,7 +133,7 @@ table {
 }
 
 th {
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     color: rgb(255, 246, 235);
     padding: 12px;
     text-align: center;
@@ -163,7 +163,7 @@ td img {
 }
 
 footer {
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     font-family: arial;
     padding: 2%;
 }
@@ -191,7 +191,7 @@ footer {
 summary {
     cursor: pointer;
     padding: 8px 16px;
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     color: rgb(255, 246, 235);
     border-radius: 6px;
     text-align: center;
@@ -207,7 +207,7 @@ details ul li a {
     color: rgb(255, 246, 235);
     text-decoration: none;
     border-radius: 0.5em;
-    background-color: rgb(176, 95, 70);
+    background-color: rgb(98, 43, 24);
     padding: 6px 12px;
     text-align: center;
     display: block;
