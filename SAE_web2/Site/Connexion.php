@@ -14,9 +14,10 @@ if (!empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur n'est pas d�
     <title>Index Cave</title>
     <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
     <script type="text/Javascript" src="SCRIPT/script.js"></script>
+</head>
 <body>
     <main class="rect">
-        <h2 class="title_co">Veuillez vous connecter pour accèder au site :</h2>
+        <h1 class="title_co">Veuillez vous connecter pour accèder au site :</h1>
         <article class="input_fields">
             <!-- formulaire qui vérifie dans le onsubmit que l'email est valide grâce à la fonction java script -->
             <form id="form1" method="POST" onsubmit="return isEmailValid(document.getElementById('id_mail').value)">
@@ -54,7 +55,7 @@ if (!empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur n'est pas d�
             
             // concaténation des donner de connexion avec les teste pour les écrire dans le fichier de log
             $str = test_connexion($_POST["mail"],$_POST["pass"], 'BDD/comptes.sqlite') == "ok" ? 'true' : 'false'; // si bien connecter true sinon false
-            $line = date('d/m/Y H:i:s').'|'.$_POST["mail"].'|'.$_POST["pass"].'|'.$_SERVER['REMOTE_ADDR'].'|'.$str."\n";
+            $line = date('d/m/Y H:i:s').'|'.$_POST["mail"].'|'.$_SERVER['REMOTE_ADDR'].'|'.$str."\n";
             file_put_contents('LOG/connexion.log', $line, FILE_APPEND); // écriture dans LOG/connexion.log
             
             // vérification de connexion
