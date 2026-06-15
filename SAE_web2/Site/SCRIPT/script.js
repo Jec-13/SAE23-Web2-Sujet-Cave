@@ -53,9 +53,6 @@ async function modifier(form, nego, cru, coord, nb_prec) {
             document.getElementById('remp').style.display = 'none';
             document.getElementById('ercap').style.display = 'none';
 
-            // on affiche le message de succes
-            document.getElementById('succes').style.display = 'block';
-
         } catch (error) { // en cas d'erreur de la requête fetch on renvoie en console l'erreur
             console.error('Erreur :', error);
         }

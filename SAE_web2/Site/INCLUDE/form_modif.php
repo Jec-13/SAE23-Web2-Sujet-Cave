@@ -16,6 +16,7 @@ function from_modif($name){
                 echo "<input class='id' type='number' name='Nb_bouteilles' id='Nb_bouteilles' value='".$name["NB_BOUTEILLES"]."' required><br>";
                 ?>
             </div>
+            <label class="title_capcha">Faites un <b>ALL IN ONE</b></label>
             <?php
             // affichage du captcha
             // choix de coordonnées aléatoires sur lesquelles se trouvera l'image avec le drapeau
@@ -46,7 +47,6 @@ function from_modif($name){
         <p id='erch' class='erch'> Le nombre doit être différent de celui actuel</p>
         <p id='remp' class='remp'> Le champ doit être rempli</p>
         <p id='ercap' class='ercap'> Le captcha doit être résolu</p>
-        <p id='succes' class='succes'> La modification a bien été faite !</p>
         </div>
     </form>
     </div>

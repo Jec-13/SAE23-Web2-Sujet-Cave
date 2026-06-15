@@ -24,7 +24,7 @@ if (empty($_SESSION['EMAIL'])){ // vérification que l'utilisateur est bien conn
 </head>
 <body>
 <?php
-header_page("Principale"); // affichage du header
+header_page("Modification"); // affichage du header
 menu_page(); // affichage du menu de navigation entre les pages
 ?>
 <article>

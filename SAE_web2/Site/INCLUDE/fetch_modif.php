@@ -1,3 +1,4 @@
+
 <?php
 include 'functions.php';
 
@@ -15,8 +16,9 @@ if (!empty($_POST) && isset($_POST["CRU"]) && isset($_POST["NAME"]) && isset($_P
     if ($scase === $coord){ // vérification de la validité du captcha
         modif_element($path, $nb, $cru, $nego); // modification de la base
         afficheTableau(get_liste_vins_one($path, $cru, $nego)); // affichage de l'élément modifié
+        echo "<p id='succes' class='succes'> La modification a bien été faite !</p>";
     } else{ // affichage de l'erreur capcha
-        echo "<p id='ercap2' class='ercap2'> Le captcha doit être résolu<</p>";
+        echo "<p id='ercap2' class='ercap2'> Le captcha doit être résolu</p>";
     }
 }
 ?>
